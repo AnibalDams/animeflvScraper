@@ -75,12 +75,4 @@ async function scrap2(){
 
 }
 
-async function scrap3() {
-    const url = await axios("https://www3.animeflv.net/anime/kekkon-suru-tte-hontou-desu-ka")
-    const scraper = cheerio.load(url.data)
-    const animes = []
-    // imgLinks:[{selector:"span.Image>img", value:"src"}]
-    console.log(scraper("#episodeList ").extract({names:[{selector:"li a h3.Title"}]}))
-}
-
 console.log(scrap2())
